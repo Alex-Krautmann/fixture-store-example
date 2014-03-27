@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>CanJS jQuery Template</h1>
+        <p>This template includes jQuery, CanJS and all of its plugins. Use it as a starting point when you are submitting a question to <a href="https://twitter.com/#!/canjs" target="_blank">Twitter</a>, the <a href="https://forum.javascriptmvc.com/#Forum/canjs" target="_blank">forums</a> or IRC.</p>
+        <p>Don't want jQuery? Here are links to templates for other libraries:
+            <br>
+            <a href="http://jsfiddle.net/donejs/9x96n/">Dojo</a> |
+            <a href="http://jsfiddle.net/donejs/w6m73/">YUI</a> |
+            <a href="http://jsfiddle.net/donejs/mnNJX/">Mootools</a> |
+            <a href="http://jsfiddle.net/donejs/7Yaxk/">Zepto</a> 
+        </p>
+    </div>
+    <!-- YOUR CODE HERE -->
+    <div id="dummy">
+        <button class="add-button">Get another thing from server</button>
+        
+    </div>
+
+    <!-- PUT ANY TEMPLATES YOU NEED HERE -->
+    <script id="thingMustache" type="text/mustache">
+    <h2>Showing {{numShown}} items of {{numTotal}} total items on the server</h2>
+    {{#thingList}} 
+        <p> {{name}} </p>
+    {{/thingList}}
+    </script>
+    <script type="text/javascript" src="js/require.js" data-main="js/driver.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+.header {
+    background: #E1E3E1;
+    padding: 10px 0;
+    border-bottom: 1px solid #B5B6B5;
+    margin-bottom: 15px;
+}
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+p { 
+    margin: 10px 0;
+}
