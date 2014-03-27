@@ -31,7 +31,7 @@ define(['jquery', 'can', 'can/util/fixture'],
                 }));
                 // setup bind to increment numShown
                 this.options.listToShow.bind('add', function() {
-                    self.options.numShown(self.options.numShown()+1);
+                    self.options.numShown(self.options.numShown() + 1);
                 });
             },
             'button click': function(el, evt) {
@@ -42,13 +42,16 @@ define(['jquery', 'can', 'can/util/fixture'],
                 Thing.findOne({
                     id: self.options.numShown()
                 }, function(thing) {
-                	if (thing) {
-                		self.options.listToShow.push(thing);
-                	}
-                	else {
-                		var bugStr = "Should have responded with some appropriate http error code: got " + typeof thing + " object";
-                		self.options.listToShow.push({name:bugStr});
-                	}
+                    if (thing) {
+                        // IF here, it means the fixture store found the item and returns it as expected
+                        self.options.listToShow.push(thing);
+                    } else {
+                        // IF here, it means the fixture did not find the item, and returns undefined
+                        var bugStr = "Should have responded with some appropriate http error code: got " + typeof thing + " object";
+                        self.options.listToShow.push({
+                            name: bugStr
+                        });
+                    }
                     el.removeAttr('disabled');
                 });
             }
